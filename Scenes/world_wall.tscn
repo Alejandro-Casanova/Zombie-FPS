@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://cv7xbg7gvs8m3"]
+
+[ext_resource type="Texture2D" uid="uid://xrsy7coy24c5" path="res://Assets/40-sample-textures/m-027.jpg" id="1_6dv11"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_47u6s"]
+size = Vector3(40, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juugq"]
+albedo_texture = ExtResource("1_6dv11")
+uv1_scale = Vector3(40, 2, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_75353"]
+lightmap_size_hint = Vector2i(202, 12)
+material = SubResource("StandardMaterial3D_juugq")
+size = Vector2(40, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjy4h"]
+albedo_texture = ExtResource("1_6dv11")
+uv1_scale = Vector3(40, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_clbcw"]
+material = SubResource("StandardMaterial3D_jjy4h")
+size = Vector2(40, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lhcv"]
+albedo_texture = ExtResource("1_6dv11")
+uv1_scale = Vector3(1, 2, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_wl5as"]
+material = SubResource("StandardMaterial3D_7lhcv")
+size = Vector2(1, 2)
+
+[node name="Wall1" type="StaticBody3D"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_47u6s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5)
+mesh = SubResource("QuadMesh_75353")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -0.5)
+mesh = SubResource("QuadMesh_75353")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 2, 0)
+mesh = SubResource("QuadMesh_clbcw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 1, 0)
+mesh = SubResource("QuadMesh_wl5as")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 1, 0)
+mesh = SubResource("QuadMesh_wl5as")

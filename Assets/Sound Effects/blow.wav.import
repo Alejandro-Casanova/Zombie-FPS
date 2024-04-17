@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bpyovehpa6c22"
+path="res://.godot/imported/blow.wav-790e1e0891496a96b1d86e19d6f58b7f.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/blow.wav"
+dest_files=["res://.godot/imported/blow.wav-790e1e0891496a96b1d86e19d6f58b7f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

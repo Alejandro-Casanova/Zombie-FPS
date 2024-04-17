@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://uqahsvsr3xo8"]
+
+[ext_resource type="Texture2D" uid="uid://bv3uloov5sax" path="res://Assets/40-sample-textures/m-011.jpg" id="2_4txlf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3uft0"]
+size = Vector3(2.5, 1.8, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brsjf"]
+albedo_texture = ExtResource("2_4txlf")
+
+[node name="MetalContainerObstacle" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_3uft0")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+size = Vector3(2.5, 1.8, 4)
+material = SubResource("StandardMaterial3D_brsjf")

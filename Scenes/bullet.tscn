@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1pj8u80k8aeh"]
+
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_kdxw4"]
+[ext_resource type="AudioStream" uid="uid://dqrhtrw7fwwhk" path="res://Assets/Sound Effects/blow.wav" id="2_5od3x"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ki2ay"]
+radius = 0.08
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygkh7"]
+albedo_color = Color(0.498039, 0.498039, 0.498039, 1)
+metallic = 1.0
+metallic_specular = 0.0
+metallic_texture_channel = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_w30rl"]
+material = SubResource("StandardMaterial3D_ygkh7")
+radius = 0.06
+height = 0.12
+
+[node name="Bullet" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_kdxw4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ki2ay")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_w30rl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_5od3x")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
